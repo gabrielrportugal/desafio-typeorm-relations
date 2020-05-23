@@ -34,7 +34,7 @@ export default class CreateOrdersProducts1590192334679
           {
             name: 'price',
             type: 'decimal',
-            precision: 5,
+            precision: 10,
             scale: 2,
           },
           {
@@ -62,7 +62,7 @@ export default class CreateOrdersProducts1590192334679
         columnNames: ['product_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'products',
-        onDelete: 'SET NULL',
+        onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
       }),
     );
@@ -74,7 +74,7 @@ export default class CreateOrdersProducts1590192334679
         columnNames: ['order_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'order',
-        onDelete: 'SET NULL',
+        onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
       }),
     );
