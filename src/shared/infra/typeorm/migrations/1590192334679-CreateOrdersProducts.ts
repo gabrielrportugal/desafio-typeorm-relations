@@ -73,7 +73,7 @@ export default class CreateOrdersProducts1590192334679
         name: 'OrderId',
         columnNames: ['order_id'],
         referencedColumnNames: ['id'],
-        referencedTableName: 'order',
+        referencedTableName: 'orders',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
       }),
@@ -81,7 +81,7 @@ export default class CreateOrdersProducts1590192334679
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('order_products', 'OrderId');
+    await queryRunner.dropForeignKey('orders_products', 'OrderId');
     await queryRunner.dropForeignKey('orders_products', 'ProductId');
     await queryRunner.dropTable('orders_products');
   }
