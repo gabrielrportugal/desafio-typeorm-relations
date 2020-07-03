@@ -6,7 +6,6 @@ import {
   OneToOne,
   JoinColumn,
   OneToMany,
-  Column,
 } from 'typeorm';
 
 import Customer from '@modules/customers/infra/typeorm/entities/Customer';
@@ -17,16 +16,13 @@ class Order {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @OneToOne(_ => Customer, { eager: true })
+  @OneToOne(() => Customer, { eager: true })
   @JoinColumn({ name: 'customer_id' })
   customer: Customer;
 
-  @Column()
-  customer_id: string;
-
-  @OneToMany(_ => OrdersProducts, ordersProducts => ordersProducts.order, {
-    cascade: true,
+  @OneToMany(() => OrdersProducts, ordersProducts => ordersProducts.order, {
     eager: true,
+    cascade: true,
   })
   order_products: OrdersProducts[];
 

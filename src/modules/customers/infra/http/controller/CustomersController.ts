@@ -15,6 +15,6 @@ export default class CustomersController {
       name,
     });
 
-    return response.status(200).json(customer);
+    return response.json(customer);
   }
 }
